@@ -18,7 +18,114 @@
             <dd>2.Universalidad: El método entrega las soluciones de cualquier sistema de ecuaciones lineales sin restricción </dd>
             <dd>3.Eficiencia: Es un método muy rápido y eficiente.</dd>
         </dl>
+        <p>Sirven solo para sistemas de ecuaciones con igual número de ecuaciones que de incógnitas, los llamados sistemas cuadrados,
+        o sea solo resuelven sistemas con solución única. Esto hace que estos métodos sean muy poco usados</p>
+        <h4>La Matriz Inversa un nuevo enfoque</h4>
+        <p>Un enfoque diferente al método de eliminación de Gauss para resolver un sistema de ecuaciones lineales comienza con representar un 
+        sistema de ecuaciones no usando la matriz aumentada sino representando el sistema de la forma matricia <img src="../imagenes/3.1/3.1.1.png">
+        . Por ejemplo consideremos el siguiente sistema de 2x2:</p>       
+        <div style="display: inline-block; width: 50%;">
+            <img src="../imagenes/3.1/3.1.2.png" width="100">
+        </div>
+        <p>Recuerde que multiplicar una matriz por un vector se puede hacer por columnas y entonces: </p>
+        <div style="display: inline-block; width: 50%;">
+            <img src="../imagenes/3.1/3.1.3.png" width="500">
+        </div>
+        <p>y entonces Este sistema lo puede expresar de la siguiente manera:</p>
+        <div style="display: inline-block; width: 50%;">
+            <img src="../imagenes/3.1/3.1.4.png" width="500">
+        </div>
+        <P>Si queremos resolverlo se nos puede ocurrir pensar en "despejar" x el vector de incógnitas y entonces simplemente: 
+        "Pasar la matriz A a dividir y así queda <img src="../imagenes/1.2/1.2.9.png">  despejada" o sea:</P>
+        <div style="display: inline-block; width: 50%;">
+            <img src="../imagenes/3.1/3.1.5.png" width="100">
+        </div>
+        <p>Entonces: <img src="../imagenes/3.1/3.1.6.png"></p>
+        <div style="display: inline-block; width: 50%;">
+            <img src="../imagenes/3.1/3.1.7.png" width="500">
+        </div>
+        <p>En el caso del sistema de 2x2 que planteamos al comienzo la respuesta es afirmativa, la matriz mágica es:</p>
+        <div style="display: inline-block; width: 50%;">
+            <img src="../imagenes/3.1/3.1.8.png" width="200">
+        </div>
+        <p>Miremos:</p>
+        <div style="display: inline-block; width: 50%;">
+            <img src="../imagenes/3.1/3.1.9.png" width="300">
+        </div>
+        <p>y entonces la solución del sistema es <img src="../imagenes/3.1/3.1.10.png"></p>
     </section>
     
+    <section style="margin-top: 70px;width: 900px;margin-right: auto;margin-left: auto;margin-top: 30px;">
+        <h3>3.2 MATRIZ INVERSA GAUSS-JORDAN</h3>
+        <h4>Matrices de 2x2</h4>
+        <div style="display: inline-block; width: 50%;">
+            <img src="../imagenes/3.2/3.2.1.png" width="900">
+        </div>
+        <h4>Inversa de Matrices de 3x3</h4>
+        <p>El Método más sencillo de encontrar la inversa de una Matriz, si esta existe, es el de Gauss-Jordan, 
+        lo invito a explorar el siguiente applet donde se explica como encontrar la Matriz Inversa.</p>
+        <div style="display: inline-block; width: 50%;">
+            <img src="../imagenes/3.2/3.2.2.png" width="900">
+        </div>
+    </section>
+    
+    <section style="margin-top: 70px;width: 900px;margin-right: auto;margin-left: auto;margin-top: 30px;">
+        <h3>3.3 DETERMINANTES</h3>
+        <p>Los determinantes están mucho más lejos del centro del álgebra lineal de lo que estaban hace cien años. 
+        ¡Las matemáticas siguen cambiando de dirección! Después de todo, un simple número puede decir tanto sobre una matriz. 
+        De todos modos, es extraordinario cuánto puede hacer este número.  Un punto de vista es: el determinante constituye una 
+        fórmula "explícita" para cada elemento de <img src="../imagenes/3.3/3.3.1.png">. Esta fórmula no modifica la manera de realizar los cálculos; 
+        incluso el determinante en sí se encuentra por eliminación. De hecho, la eliminación puede considerarse como la manera más eficiente de sustituir los elementos de una matriz de n por n en la fórmula. 
+        Lo que hace la fórmula es mostrar cómo <img src="../imagenes/3.3/3.3.2.png"> depende de los <img src="../imagenes/3.3/3.3.3.png">
+        elementos de A, y la forma en que varía cuando los elementos cambian.</p>
+        <h4>Propiedades del Determinante</h4>
+        <p>Consisten en una lista bastante larga. Por fortuna, cada regla es fácil de encontrar, e incluso más fácil de ilustrar, mediante un ejemplo de 2 por 2. 
+        En consecuencia, se comprobará que la conocida definición en el caso de 2 por 2:</p>
+        <div style="display: inline-block; width: 50%;">
+            <img src="../imagenes/3.3/3.3.4.png" width="300">
+        </div>
+        <dd>1. El determinante de la matriz identidad es 1. </dd>
+        <div style="display: inline-block; width: 50%;">
+            <dd><img src="../imagenes/3.3/3.3.5.png" width="300"></dd>
+        </div>
+        <dd>2. El determinante cambia de signo cuando se intercambian dos renglones.</dd>
+        <div style="display: inline-block; width: 50%;">
+            <dd><img src="../imagenes/3.3/3.3.6.png" width="400"></dd>
+        </div>
+        <dd>3. El determinante depende linealmente del primer renglón. Suponga que A, B, C son iguales a partir del segundo renglón, y que el renglón l de A es una 
+        combinación lineal de los primeros renglones de B y C. Entonces la regla establece: det A es la misma combinación que det B y det C. Las combinaciones lineales 
+        implican dos operaciones: sumar vectores y multiplicar por escalares. Por consiguiente, esta regla puede separarse en dos partes:</dd>
+        <div style="display: inline-block; width: 50%;">
+            <dd><img src="../imagenes/3.3/3.3.7.png" width="600"></dd>
+            <dd><img src="../imagenes/3.3/3.3.8.png" width="600"></dd>
+        </div>
+        <p>Este hecho prácticamente duplica la lista de propiedades, ya que cada regla aplicada a los renglones puede aplicarse ahora a las columnas: el detenninante 
+        cambia de signo cuando se intercambian dos columnas, dos columnas iguales (o una columna de ceros) producen un determinante cero, y el determinante depende 
+        linealmente de cada columna individual. La demostración consiste justamente en trasponer la matriz y trabajar con los renglones. Considero que es hora de guardar 
+        silencio y declarar que la lista está completa. Sólo queda encontrar una fórmula definitiva para el determinante, y aplicarla.</p>
+    </section>
+
+    <section style="margin-top: 70px;width: 900px;margin-right: auto;margin-left: auto;margin-top: 30px;">
+        <h3>3.4 MATRIZ INVERSA COFACTORES</h3>
+        <p>Actividad Profesor Leopoldo Aranda (Inversa de Una Matriz por CoFactores)</p>
+        <div style="display: inline-block; width: 50%;">
+            <img src="../imagenes/3.4/3.4.1.png" width="300">
+        </div>
+        <p>El Método de Cofactores es quizá el método menos popular y más dispendioso de encontrar la matriz inversa, lo invito a explorar el siguiente applet donde se 
+        explica como encontrar la Matriz Inversa para un sistema de ecuaciones de 3x3.</p>
+        <div style="display: inline-block; width: 50%;">
+            <img src="../imagenes/3.4/3.4.2.png" width="200">
+        </div>
+    </section>
+
+    <section style="margin-top: 70px;width: 900px;margin-right: auto;margin-left: auto;margin-top: 30px;">
+       <h3> 3.5 METODO DE CRAMER</h3>
+       <p>El método de Cramer es un método sencillo y atractivo de resolver sistemas de ecuaciones que conducen a solución única., en el siguiente applet puede encontrar 
+        una explicación interactiva de este método:</p>
+        <div style="display: inline-block; width: 50%;">
+            <img src="../imagenes/3.5/3.5.1.png" width="700">
+        </div>
+    </section>
+
 </body>
 </html>
