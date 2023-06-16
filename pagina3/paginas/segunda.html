@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Albegra lineal</title>
+</head>
+<body style="font-family: Arial, Helvetica, sans-serif;">
+    <h2>2.Sistema de ecuaciones (Eliminacion)</h2>
+    <section style="margin-top: 70px;width: 900px;margin-right: auto;margin-left: auto;margin-top: 30px;">
+        <h3>2.1 Introduccion</h3>
+        <p>Los sistemas de ecuaciones lineales se encuentran en el corazón del álgebra lineal, y este capítulo los usa 
+        para introducir algunos de los conceptos centrales del álgebra lineal de una manera simple y concreta 
+        ajuste. Se presenta un método sistemático para resolver sistemas de ecuaciones. Este algoritmo se utilizará para 
+        cálculos a lo largo del texto, luego se muestra cómo un sistema de ecuaciones lineales es equivalente a una ecuación 
+        vectorial y una ecuación matricial. Esta equivalencia reducirá los problemas que involucran combinaciones lineales de 
+        vectores a preguntas sobre sistemas de ecuaciones lineales,es te capítulo  jugará un papel esencial a lo largo del texto 
+        mientras exploramos la belleza y poder del álgebra lineal.</p>
+    </section>
+    <section style="margin-top: 70px;width: 900px;margin-right: auto;margin-left: auto;margin-top: 30px;">
+        <h3>2.2 Sistema de 2x2</h3>
+        <p>El problema central del álgebra lineal es la solución de ecuaciones y es más sencillo  cuando el numero de incógnitas es 
+        igual al número de ecuaciones empecemos con n = 2:</p>
+        <div  style="display: inline-block; width: 50%; ">
+            <img src="../imagenes/2.2/2.2.1.png" width="500">
+        </div>
+        <p>las incógnitas  son x y y. Para resolver estas ecuaciones podemos usar el método de eliminación o el de determinantes
+        1. Eliminación :De la segunda ecuación, reste 4 veces la primera ecuación. Así se elimina x de la segunda ecuación, y queda una ecuación para y:</p>
+        <div  style="display: inline-block; width: 50%; ">
+            <img src="../imagenes/2.2/2.2.2.png" width="500">
+        </div>
+        <p>De inmediato se sabe que y=2, Luego se averigua x a partir de la primera ecuación, Con sustitución hacia atrás:</p>
+        <div  style="display: inline-block; width: 50%; ">
+            <img src="../imagenes/2.2/2.2.3.png" width="500">
+        </div>
+        <p>Procediendo cuidadosamente, se comprueba que x e y, cumplen también la segunda ecuación, esto debe funcionar, 
+        como es el caso: 4 veces (x=-1) mas cinco veces (y = 2) es igual a 6.</p>
+        <p>2. Determinantes : La solución y = 2, depende completamente de los seis números en las ecuaciones. Debe existir una fórmula para 
+        y, (y también para x,). Se trata de una razón de determinantes, que espero, el lector me permita escribir directamente:</p>
+        <div  style="display: inline-block; width: 50%; ">
+            <img src="../imagenes/2.2/2.2.4.png" width="500">
+        </div>
+    </section>
+    <section style="margin-top: 70px;width: 900px;margin-right: auto;margin-left: auto;margin-top: 30px;">
+        <h3>2.3 Sistema 3x3</h3>
+        <p>La mejor forma de entender la eliminación es por medio de un ejemplo. Entremos al espacio de tres dimensiones:</p>
+        <div  style="display: inline-block; width: 50%; ">
+            <img src="../imagenes/2.3/2.3.1.png" width="300">
+        </div>
+        <p>El problema consiste en encontrar los valores desconocidos de r x, r y, y r z, de modo que aplicaremos la  eliminación gaussiana. (Gauss 
+        es reconocido como el más grande de los matemáticos, aunque no ciertamente debido a este invento, que quizá le llevó 10 minutos. Irónicamente, 
+        es el concepto más frecuentemente utilizado que lleva su nombre.) El método empieza por eliminar r x de las dos últimas ecuaciones. Para lograr
+        este objetivo se requiere lo siguiente</p>
+        <dd>a) restar 2 veces la primera ecuación de la segunda.</dd>
+        <dd>b) restar -1 vez la primera ecuación de la tercera.</dd>
+        <p>Sistema Equivalente:</p>
+        <div  style="display: inline-block; width: 50%; ">
+            <img src="../imagenes/2.3/2.3.2.png" width="300">
+        </div>
+        <p>El coeficiente 2 es el primer pivote. La eliminación consiste en dividir constantemente el primer pivote entre los números que están abajo 
+        de él, con la finalidad de encontrar los multiplicadores adecuados, el siguiente pivote  de la eliminación es -8 (en este momento  se ignora 
+        la primera ecuación que ya cumplió su papel con el pivote 2)  Un multiplo de la segunda ecuación se restará de las ecuaciones que quedan (en 
+        este caso sólo queda la tercera) con la finalidad de eliminar y de la segunda ecuación se suma a la tercera o, en otras palabras se resta -1 
+        vez la segunda ecuación de la tercera.Ahora el proceso de eliminación está completo, por lo menos en la dirección "hacia adelante":</p>
+        <p>Sistema Triangular:</p>
+        <div  style="display: inline-block; width: 50%; ">
+            <img src="../imagenes/2.3/2.3.3.png" width="300">
+        </div>
+        <p>Este sistema se resuelve hacia atrás, de abajo hacia  arriba. La última ecuación da z = 2. Al sustituir en la segunda ecuación, se encuentra 
+        Y = 1. Luego, la primera ecuación da X = 1. Este proceso se denomina sustitución hacia atrás. (Nota: Resumiendo, con la eliminación hacia adelante 
+        se obtuvieron los pivotes 2, -8, 1. En este método se restan múltiplos de cada renglón de los renglones de abajo para llegar al sistema "triangular" 
+        (3), que se resuelve en orden inverso. Luego, cada nuevo valor calculado se sustituye en las ecuaciones restantes.)</p>
+        <h4>Usando  Matrices</h4>
+        <p>Para no escribir tanto y hacer el proceso de eliminación es conveniente introducir las matrices, en particular la matriz  aumentada del sistema 
+        de ecuaciones, colocamos en las primeras columnas de la matriz los coeficientes asociados a cada variable (x,y,z) e incluimos las partes derechas  
+        de las ecuaciones como una columna adicional. No es necesario copiar x,y,z  en cada paso, por lo que se trabaja con lo mínimo indispensable:</p>
+        <div  style="display: inline-block; width: 50%; ">
+            <img src="../imagenes/2.3/2.3.4.png" width="300">
+        </div>
+        <p>AI final se llega al sistema triangular, que ya está listo para la sustitución hacia atrás. Es posible que el  lector prefiera esta disposición, 
+        que garantiza que las operaciones en el miembro izquierdo de la ecuación también se realizan en el miembro derecho, ya que ambos miembros están juntos 
+        ahí. En un problema más grande, la eliminación hacia adelante requiere más esfuerzo. Se usan múltiplos de la primera ecuación para producir ceros abajo 
+        del primer pivote. Luego, la segunda columna se limpia abajo del segundo pivote. El paso hacia adelante se finaliza cuando el sistema es triangular; la 
+        ecuación n sólo contiene a la última incógnita multiplicada por el último pivote. La sustitución hacia atrás produce la solución completa en orden opuesto: 
+        se empieza con la última incógnita, luego se resuelve de la siguiente hasta la última, terminando con la primera.Por definición,  los pivotes no pueden  ser 
+        cero (¿Por qué?)</p>
+        <h4>Continuando la eliminación (Matriz Escalonada Reducida)</h4>
+        <p>Para encontrar la solución al sistema de ecuaciones podemos llegar a la matriz triangular y a partir de ahí resolver el sistema usando substitución hacia 
+        atrás como acabamos de hacer, pero podríamos también hacer esa sustitución hacia atrás directamente en la matriz triangular.</p>
+        <div  style="display: inline-block; width: 50%; ">
+            <img src="../imagenes/2.3/2.3.5.png" width="300">
+        </div>
+        <dt>Iremos entonces de abajo hacia arriba  y</dt>
+        <dt>1. Eliminar la variable z de las ecuaciones 1 y 2, </dt>
+        <dt>2. Eliminar la variable y de la ecuación 1</dt>
+        <p>Esto multiplicando los pivotes de la tercera y segunda fila por los multiplos apropiados:</p>
+        <p>Multipliquemos por dos la fila 3 y sumémola a la fila 2 obtenemos:</p>
+        <div  style="display: inline-block; width: 50%; ">
+            <img src="../imagenes/2.3/2.3.6.png" width="300">
+        </div>
+        <p>Ahora multipliquemos la misma fila 3 por -a para eliminar el 1 de la fila 1:</p>
+        <div  style="display: inline-block; width: 50%; ">
+            <img src="../imagenes/2.3/2.3.7.png" width="300">
+        </div>
+        <p>Finalmente. multipliquemos por -1/8 la fila 2 y restémola de la fila 1 y obtenemos:</p>
+        <div  style="display: inline-block; width: 50%; ">
+            <img src="../imagenes/2.3/2.3.8.png" width="300">
+        </div>
+        <p>Ya tenemos ceros arriba y abajo de los pivotes, lo que indica que cada ecuación tiene una sola variable,las ecuaciones correspondientes a esta última matriz son la siguientes:</p>
+        <div  style="display: inline-block; width: 50%; ">
+            <img src="../imagenes/2.3/2.3.9.png" width="300">
+        </div>
+        <p>Si convertimos los pivotes de la matriz que no son 1 ( 2 y -8), en 1 dividiendo las filas 1 y 2 por los pivotes respectivos obtenemos la siguiente matriz:</p>
+        <div  style="display: inline-block; width: 50%; ">
+            <img src="../imagenes/2.3/2.3.10.png" width="300">
+        </div>
+        <p>De esta matriz final (llamada matriz Escalonada Reducida) podemos leer directamente la solución al sistema de ecuaciones:</p>
+        <div  style="display: inline-block; width: 50%; ">
+            <img src="../imagenes/2.3/2.3.11.png" width="300">
+        </div>
+    </section>
+    
+</body>
+</html>
